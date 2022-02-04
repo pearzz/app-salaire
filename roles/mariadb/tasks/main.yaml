@@ -22,12 +22,14 @@
          user=root
          password=""
       mode: 0400
+      
   - name: Allow external MySQL connexions (1/2)
     lineinfile:
       path: /etc/mysql/mysql.conf.d/mysqld.cnf
       regexp: '^skip-external-locking'
       line: "# skip-external-locking"
-      notify: Restart mysql
+    notify: Restart mysql
+    
   - name: Allow external MySQL connexions (2/2)
     lineinfile:
       path: /etc/mysql/mysql.conf.d/mysqld.cnf
