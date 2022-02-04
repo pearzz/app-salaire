@@ -5,11 +5,13 @@
     - create_user
     
 - name: install httpd
+  become_user: app-salaire
   hosts: [web]
   roles:
     - httpd
     
 - name: install mariadb
+  become_user: app-salaire
   hosts: [db]
   roles:
     - mariadb
