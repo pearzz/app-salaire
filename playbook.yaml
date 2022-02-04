@@ -1,6 +1,15 @@
-- name: install httpd et mariadb
+- name: create user
   hosts: all
   become: yes
   roles:
+    - create_user
+    
+- name: install httpd
+  hosts: [web]
+  roles:
     - httpd
+    
+- name: install mariadb
+  hosts: [db]
+  roles:
     - mariadb
