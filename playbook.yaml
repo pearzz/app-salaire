@@ -1,7 +1,7 @@
-- name: create user
-  hosts: [all]
-  roles:
-    - create_user
+#- name: create user
+ # hosts: [all]
+  #roles:
+   # - create_user
     
 - name: install httpd
   become_user: app-salaire
