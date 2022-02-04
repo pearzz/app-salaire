@@ -1,3 +1,5 @@
+---  
+  
   - name: installation mysql
     yum:
       name: "{{ item }}"
