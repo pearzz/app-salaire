@@ -1,0 +1,6 @@
+- name: install httpd et mariadb
+  hosts: all
+  become: yes
+  roles:
+    - httpd
+    - mariadb
