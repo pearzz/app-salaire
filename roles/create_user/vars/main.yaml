@@ -1,2 +1,4 @@
-user: app-salaire
-group: ansible
+user: 
+  - app-salaire
+group: 
+  - ansible
