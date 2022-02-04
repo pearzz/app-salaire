@@ -1,0 +1,18 @@
+---
+
+- name: ajout groupe ansible
+  group:
+    name: "{{ group }}"
+    state: present
+
+- name: create user
+  user:
+    name: "{{ user }}"
+    group: "{{ group }}"
+    state: present
+    
+- name: ajout de la clé ssh
+  authorized_key:
+    user: "{{ user }}"
+    state: present
+    key: "{{ lookup('file', '/home/{{ user }}/.ssh/id_rsa.pub') }}"
