@@ -4,13 +4,13 @@
    # - create_user
     
 - name: install httpd
-  become_user: app-salaire
+  become: yes
   hosts: [web]
   roles:
     - httpd
     
 - name: install mariadb
-  become_user: app-salaire
+  become: yes
   hosts: [db]
   roles:
     - mariadb
