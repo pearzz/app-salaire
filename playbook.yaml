@@ -6,12 +6,10 @@
     
 - name: install httpd
   hosts: [web]
-  become_user: app-salaire
   roles:
     - httpd
     
 - name: install mariadb
   hosts: [db]
-  become_user: app-salaire
   roles:
     - mariadb
