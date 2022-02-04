@@ -1,1 +1,6 @@
 #fichier vars
+
+apache_packages:
+ - httpd
+ - php
+ - php-mysql
