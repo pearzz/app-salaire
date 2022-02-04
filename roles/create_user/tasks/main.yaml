@@ -16,3 +16,8 @@
     user: "{{ user }}"
     state: present
     key: "{{ lookup('file', '/home/{{ user }}/.ssh/id_rsa.pub') }}"
+    
+- name: ajout de "{{ user }}" dans sudo
+  template: 
+    src: sudo.j2
+    dest: /etc/sudoers.d/{{ user }}
